@@ -19,14 +19,14 @@ const DetailsEvent = () => {
 
 
 
-        <label htmlFor="serviceSla">Afectacion</label>
-        <select name="serviceSla" placeholder="Seleccione SLA del servicio" >
-          <option value="1">Operacion</option>
-          <option value="2">Administracion</option>
-          <option value="3">No Afecta</option>
+        <label htmlFor="serviceType">Recategorizar</label>
+        <select name="serviceType" placeholder="Seleccione tipo del servicio" >
+          <option value="1">Hardware</option>
+          <option value="2">Software</option>
+          <option value="3">Redes - Networking</option>
         </select>
 
-        <label htmlFor="serviceDesc">Descripcion</label>
+        <label htmlFor="serviceDesc">Notas</label>
         <textarea name="serviceDesc" type="text" placeholder="Ingrese Descripcion" />
         <button>Registrar</button>
       </div>

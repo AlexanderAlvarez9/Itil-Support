@@ -1,27 +1,27 @@
 
-# About - At Your Click
+# About - Suppourtil
 
 Proyecto Personal Platzi Master - Cohort 3 - Grupo Ana Belisa
 
 ## Project description
 
-Web app proyect for market food
+Web app proyect for suppourt app based on WEB
 
 ## Scope
 
-This application want to help to business to offer products and news in page hosted in Internet
+This application want to help to business to create operate and resolve problems and issues in our organization
 
 Este protecyo tendra como alcance la creacion de un sistema de gestion de casos para soporte tecnico
 
-- Buscar los items mediante un buscador
-- Filtrar los items mediante el uso de categorias que te mostrara la informacion contenida en cada una de estas
-- Agregar los items que desees a tu carrito de compras, donde podras agregar, restar o eliminar unidades del item a comprar
-- Una vez hecho esto procederas a el proceso de compra donde en este caso se implementara ...
-- En caso de no tener estar con la sesion iniciada se solicitara iniciar sesion o registrarse, luego de esto se redigira a la pagina para continuar la compra
+- Login para usuarios tanto administrador como usuario final
+- Creacion y enrrolamiento de nuevos usuarios para el uso del aplicativo
+- Creacion de servicios, los cuales tendran un area asignada, la cual a su vez tendra una prioridad de atencion (SLA)
+- Creacion de nuevos eventos o issues, los cuales seran creados por el usuario final que sera el afectado y seran atendidos por los tecnicos luego de que el sistema automaticamente los asigne y asigne su prioridad
+- Dashboard y gestion de cada caso donde cada tecnico podra ver los casos que debe operar y resolver dentro de el tiempo que el sistema asigno
 
 ## Creadores
 
-- Alexander Alvarez
+- [Alexander Alvarez](https://github.com/DarkMefisto9)
 
 ---
 
@@ -87,7 +87,7 @@ npm test
 ### Frontend
 
 - Componentes created has NameOfComponent.jsx en ./src/components/Component.jsx
-- Style for each component created in SASS has NameOfComponent.scss in ./src/assets/styles/Style.scss
+- Style for each component created in SASS has NameOfComponent.scss in ./src/assets/styles/components/Style.scss
 - Test will be created has NameOfComponent.test.js in ./src/__test__/Test.test.js
 
 ## Technologies
@@ -114,4 +114,4 @@ Image Preview
 
 This Food Market is released under the [MIT License](https://opensource.org/licenses/MIT).
 
-### I born at 16/06/2020
+### I born at 29/06/2020

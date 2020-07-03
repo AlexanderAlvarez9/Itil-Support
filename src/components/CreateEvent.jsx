@@ -9,8 +9,8 @@ const CreateEvent = () => {
       <div className="CreateEvent">
         <h2>CREAR EVENTO</h2>
 
-        <label htmlFor="newServiceType">Tipo del Servicio</label>
-        <select name="newServiceType" placeholder="Seleccione tipo del servicio" >
+        <label htmlFor="serviceType">Tipo del Servicio</label>
+        <select name="serviceType" placeholder="Seleccione tipo del servicio" >
           <option value="1">Hardware</option>
           <option value="2">Software</option>
           <option value="3">Redes - Networking</option>
