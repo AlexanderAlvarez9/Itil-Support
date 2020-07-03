@@ -1,0 +1,27 @@
+@import '../containers/App.scss';
+
+.RollUpService {
+  display: flex;
+  background-color: var(--card);
+  margin: 3em auto;
+  width: 80%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  input {
+    @include input();
+  }
+
+  label {
+    @include label();
+  }
+
+  textarea {
+    @include textarea();
+  }
+
+  button {
+    @include button();
+  }
+}

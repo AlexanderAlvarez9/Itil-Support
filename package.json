@@ -1,5 +1,5 @@
 {
-  "name": "MasterEats",
+  "name": "Suppourtil",
   "version": "1.0.0",
   "description": "Proyecto Grupal Platzi Master - Cohort 3 - Grupo Ana - Team JS",
   "main": "index.js",
@@ -13,7 +13,7 @@
     "url": "git+https://github.com/MasterEatsPlatzi/Master-Eats.git"
   },
   "keywords": [
-    "commerce"
+    "Support"
   ],
   "author": "Alexander",
   "license": "MIT",

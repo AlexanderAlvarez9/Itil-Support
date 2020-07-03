@@ -1,0 +1,23 @@
+@import '../containers/App.scss';
+
+.Login {
+  align-items: center;
+  background-color: var(--card);
+  margin: 3em auto;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  input {
+    @include input();
+  }
+
+  label {
+    @include label();
+  }
+
+  button {
+    @include button();
+  }
+}
