@@ -1,5 +1,7 @@
 import React from 'react';
-import '../assets/styles/components/Menu.scss'
+import { Link } from 'react-router-dom';
+import '../assets/styles/components/Menu.scss';
+
 
 class Menu extends React.Component {
   render() {
@@ -10,14 +12,15 @@ class Menu extends React.Component {
             <span>Suppourtil</span>
           </ol>
           <ol className="menu--items">
-            <li><a href="/">Login</a></li>
-            <li><a href="/">Enrrolar Nuevos Usuarios</a></li>
-            <li><a href="/">Enrrolar Servicio</a></li>
-            <li><a href="/">Crear Evento</a></li>
-            <li><a href="/">Listado Casos</a></li>
+            <li><Link to="/login">Login</Link></li>
+            <li><Link to="/new/user">Enrrolar Nuevos Usuarios</Link></li>
+            <li><Link to="/new/service">Enrrolar Servicio</Link></li>
+            <li><Link to="/new/issue">Crear Evento</Link></li>
+            <li><Link to="/issues">Listado Casos</Link></li>
+            <li><Link to="/issues/details">Detalle Caso</Link></li>
           </ol>
           <ol className="menu--close-sesion">
-            <span>Cerrar Sesion</span>
+            <span><Link to="">Cerrar Sesion</Link></span>
           </ol>
         </nav>
       </React.Fragment>

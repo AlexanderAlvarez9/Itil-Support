@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import '../assets/styles/containers/App.scss'
 import Layout from '../containers/Layout'
 import HelloWorld from '../components/HelloWorld';
@@ -43,9 +44,20 @@ function App() {
 
   return (
     <React.Fragment>
-      <Layout>
-        <DetailsEvent />
-      </Layout>
+      <BrowserRouter>
+        <Layout>
+          <Switch>
+            <Route exact path="/" component={HelloWorld} />
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/new/user" component={RollUpUser} />
+            <Route exact path="/new/service" component={RollUpService} />
+            <Route exact path="/new/issue" component={CreateEvent} />
+            <Route exact path="/issues" component={EventList} />
+            <Route exact path="/issues/details" component={DetailsEvent} />
+            <Route component={HelloWorld} />
+          </Switch>
+        </Layout>
+      </BrowserRouter>
     </React.Fragment>
   )
 }
