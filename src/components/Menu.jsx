@@ -9,7 +9,7 @@ class Menu extends React.Component {
       <React.Fragment>
         <nav className="menu">
           <ol className="menu--name">
-            <span>Suppourtil</span>
+            <Link to="/">Suppourtil</Link>
           </ol>
           <ol className="menu--items">
             <li><Link to="/login">Login</Link></li>
@@ -20,7 +20,7 @@ class Menu extends React.Component {
             <li><Link to="/issues/details">Detalle Caso</Link></li>
           </ol>
           <ol className="menu--close-sesion">
-            <span><Link to="">Cerrar Sesion</Link></span>
+            <span><Link to="/logout">Cerrar Sesion</Link></span>
           </ol>
         </nav>
       </React.Fragment>
