@@ -18,6 +18,7 @@ class Menu extends React.Component {
             <li><Link to="/new/issue">Crear Evento</Link></li>
             <li><Link to="/issues">Listado Casos</Link></li>
             <li><Link to="/issues/details">Detalle Caso</Link></li>
+            <li><Link to="/issues/details">Reasignar Caso</Link></li>
           </ol>
           <ol className="menu--close-sesion">
             <span><Link to="/logout">Cerrar Sesion</Link></span>
