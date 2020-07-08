@@ -27,8 +27,8 @@ function App() {
       <BrowserRouter>
         <Layout>
           <Switch>
-            <Route exact path="/" component={Index} />
-            <Route exact path="/login" component={Login} />
+            <Route exact path="/Itil-Support/" component={Index} />
+            <Route exact path="/login/" component={Login} />
             <Route exact path="/new/user" component={RollUpUser} />
             <Route exact path="/new/service" component={RollUpService} />
             <Route exact path="/new/issue" component={CreateEvent} />

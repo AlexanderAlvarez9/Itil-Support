@@ -1,8 +1,11 @@
 import React from 'react';
+import Containers from '../containers/Containers';
 
 const Error404 = () => {
   return (
-    <h1>Pagina NO Encontrada</h1>
+    <Containers>
+      <h1>Pagina NO Encontrada</h1>
+    </Containers>
   )
 }
 

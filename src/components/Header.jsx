@@ -1,6 +1,8 @@
 import React from 'react';
 import '../assets/styles/components/Header.scss';
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBell, faEnvelope, faFlag, faUser, faCog } from '@fortawesome/free-solid-svg-icons';
 
 class Header extends React.Component {
   render() {
@@ -12,12 +14,11 @@ class Header extends React.Component {
           </div>
 
           <div className="Header--user">
-            <a href="/" className="item icon">Mensaje</a>
-            <a href="/" className="item icon">Notificaciones</a>
-            <a href="/" className="item icon">Tareas</a>
-            <a href="/" className="item pic">Imagen</a>
-            <a href="/" className="item pic">Nombre</a>
-            <a href="/" className="item icon">Config</a>
+            <Link to="/Mensaje" className="item icon"><FontAwesomeIcon title="Mensaje" className="faEnvelope" icon={faEnvelope} /></Link>
+            <Link to="/Notificaciones" className="item icon"><FontAwesomeIcon title="Notificaciones" className="faBell" icon={faBell} /></Link>
+            <Link to="/Tareas" className="item icon"><FontAwesomeIcon title="Tareas" className="faFlag" icon={faFlag} /></Link>
+            <Link to="/Nombre" className="item pic"><FontAwesomeIcon title="Nombre" className="faUser" icon={faUser} /></Link>
+            <Link to="/Config" className="item icon"><FontAwesomeIcon title="Config" className="faCog" icon={faCog} /></Link>
           </div>
         </div>
       </React.Fragment>
