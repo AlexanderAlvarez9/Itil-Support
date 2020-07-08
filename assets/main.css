@@ -122,6 +122,10 @@ body {
     font-size: 1em;
     margin: 0.5em; }
 
+.container {
+  margin: 3em auto 0;
+  width: 80%; }
+
 /*--- VARS ----*/
 :root {
   --background: #F1F2F2;
@@ -532,8 +536,4 @@ body {
     height: 2em;
     width: 15em;
     outline: none; }
-
-.container {
-  margin: 3em auto 0;
-  width: 80%; }
 
