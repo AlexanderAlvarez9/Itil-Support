@@ -12,10 +12,12 @@ deploy:
   provider: pages
   edge: true,
   cleanup: true
-  keep-history: true
-  github-token: $GITHUB_TOKEN
+  keep_history: true
+  token: $GITHUB_TOKEN
   local_dir: dist/
-  target-branch: gh-pages
+  project_name: "Suppourtil"
+  target_branch: gh-pages
   commit_message: "Deploy Release from: %{git_branch} & with message: %{git_commit_msg}"
+  verbose: true
   on:
     branch: master
