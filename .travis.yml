@@ -11,7 +11,7 @@ script:
 deploy:
   provider: pages
   edge: true,
-  cleanup: true
+  cleanup: false
   keep_history: true
   token: $GITHUB_TOKEN
   local_dir: dist/
