@@ -15,9 +15,18 @@
   --background-gray: #EFEFEF;
   --border: 1px solid #e5edef;
   --link: #fff;
-  --visited: #56C272;
-  --hover: #F00;
-  --active: #0000FF; }
+  --visited: #fff;
+  --hover: #fff;
+  --active: #fff; }
+
+a:visited {
+  color: var(--visited); }
+
+a:hover {
+  color: var(--hover); }
+
+a:active {
+  color: var(--active); }
 
 /*--- END VARS ----*/
 body {
@@ -143,9 +152,18 @@ body {
   --background-gray: #EFEFEF;
   --border: 1px solid #e5edef;
   --link: #fff;
-  --visited: #56C272;
-  --hover: #F00;
-  --active: #0000FF; }
+  --visited: #fff;
+  --hover: #fff;
+  --active: #fff; }
+
+a:visited {
+  color: var(--visited); }
+
+a:hover {
+  color: var(--hover); }
+
+a:active {
+  color: var(--active); }
 
 /*--- END VARS ----*/
 body {
@@ -208,9 +226,18 @@ body {
   --background-gray: #EFEFEF;
   --border: 1px solid #e5edef;
   --link: #fff;
-  --visited: #56C272;
-  --hover: #F00;
-  --active: #0000FF; }
+  --visited: #fff;
+  --hover: #fff;
+  --active: #fff; }
+
+a:visited {
+  color: var(--visited); }
+
+a:hover {
+  color: var(--hover); }
+
+a:active {
+  color: var(--active); }
 
 /*--- END VARS ----*/
 body {
@@ -273,9 +300,18 @@ body {
   --background-gray: #EFEFEF;
   --border: 1px solid #e5edef;
   --link: #fff;
-  --visited: #56C272;
-  --hover: #F00;
-  --active: #0000FF; }
+  --visited: #fff;
+  --hover: #fff;
+  --active: #fff; }
+
+a:visited {
+  color: var(--visited); }
+
+a:hover {
+  color: var(--hover); }
+
+a:active {
+  color: var(--active); }
 
 /*--- END VARS ----*/
 body {
@@ -343,9 +379,18 @@ body {
   --background-gray: #EFEFEF;
   --border: 1px solid #e5edef;
   --link: #fff;
-  --visited: #56C272;
-  --hover: #F00;
-  --active: #0000FF; }
+  --visited: #fff;
+  --hover: #fff;
+  --active: #fff; }
+
+a:visited {
+  color: var(--visited); }
+
+a:hover {
+  color: var(--hover); }
+
+a:active {
+  color: var(--active); }
 
 /*--- END VARS ----*/
 body {
@@ -413,9 +458,18 @@ body {
   --background-gray: #EFEFEF;
   --border: 1px solid #e5edef;
   --link: #fff;
-  --visited: #56C272;
-  --hover: #F00;
-  --active: #0000FF; }
+  --visited: #fff;
+  --hover: #fff;
+  --active: #fff; }
+
+a:visited {
+  color: var(--visited); }
+
+a:hover {
+  color: var(--hover); }
+
+a:active {
+  color: var(--active); }
 
 /*--- END VARS ----*/
 body {
@@ -484,9 +538,18 @@ body {
   --background-gray: #EFEFEF;
   --border: 1px solid #e5edef;
   --link: #fff;
-  --visited: #56C272;
-  --hover: #F00;
-  --active: #0000FF; }
+  --visited: #fff;
+  --hover: #fff;
+  --active: #fff; }
+
+a:visited {
+  color: var(--visited); }
+
+a:hover {
+  color: var(--hover); }
+
+a:active {
+  color: var(--active); }
 
 /*--- END VARS ----*/
 body {
