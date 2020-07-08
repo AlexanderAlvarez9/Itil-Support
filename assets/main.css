@@ -117,11 +117,10 @@ body {
   right: 0; }
   .Footer--social-networks {
     padding: 0 1em; }
-  .Footer i {
+  .Footer .socialIcon {
     color: white;
     font-size: 1em;
     margin: 0.5em; }
-
 
 /*--- VARS ----*/
 :root {
@@ -533,4 +532,8 @@ body {
     height: 2em;
     width: 15em;
     outline: none; }
+
+.container {
+  margin: 3em auto 0;
+  width: 80%; }
 
