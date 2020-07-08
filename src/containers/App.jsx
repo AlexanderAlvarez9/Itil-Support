@@ -34,6 +34,7 @@ function App() {
             <Route exact path="/new/issue" component={CreateEvent} />
             <Route exact path="/issues" component={EventList} />
             <Route exact path="/issues/details" component={DetailsEvent} />
+            <Route exact path="/issues/assing" component={DetailsEvent} />
             <Route component={Error404} />
           </Switch>
         </Layout>
