@@ -14,7 +14,7 @@ deploy:
   cleanup: true
   keep-history: true
   github-token: $GITHUB_TOKEN
-  local-dir: dist/
+  local_dir: dist/
   target-branch: gh-pages
   commit_message: "Deploy Release from: %{git_branch} & with message: %{git_commit_msg}"
   on:
