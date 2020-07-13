@@ -4,7 +4,6 @@ import '../assets/styles/components/Login.scss'
 
 
 const Login = () => {
-  const categories = ['carne', 'lacteos', 'enlatados', 'vegetales', 'snacks'];
 
   return (
     <React.Fragment>
@@ -14,7 +13,11 @@ const Login = () => {
         <input id="email" type="text" placeholder="Ingrese su correo" />
         <label htmlFor="password">Contraseña</label>
         <input id="password" type="text" placeholder="Ingrese su Contraseña" />
-
+        <div className="Login--Action">
+          <input className="Login--Action__checkbox" type="checkbox" name="remember" id="remember" />
+          <label htmlFor="remember" className="Login--Action__text" id="remember-text">Recordarme</label>
+          <a className="Login--Action__forgot" href="/forgot">¿Has olvidado tu contraseña?</a>
+        </div>
         <button>Iniciar sesion</button>
       </div>
     </React.Fragment>

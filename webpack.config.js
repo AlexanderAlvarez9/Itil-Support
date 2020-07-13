@@ -55,7 +55,8 @@ module.exports = {
       filename: './index.html'/* Nombre */
     }),
     new MiniCssExtractPlugin({
-      filename: 'assets/[name].css'
+      filename: 'assets/[name].css',
+      favicon: '/src/assets/imgs/favicon.ico',
     })
   ], /* Añada los plugins que se necesitan */
 };

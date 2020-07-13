@@ -9,6 +9,7 @@ import RollUpService from '../components/RollUpService';
 import CreateEvent from '../components/CreateEvent';
 import EventList from '../components/EventList';
 import DetailsEvent from '../components/DetailsEvent';
+import MyEvents from '../components/MyEvents';
 import Index from '../components/Index';
 
 function App() {
@@ -23,23 +24,22 @@ function App() {
   ];
 
   return (
-    <React.Fragment>
-      <BrowserRouter>
-        <Layout>
-          <Switch>
-            <Route exact path="/Itil-Support/" component={Index} />
-            <Route exact path="/login/" component={Login} />
-            <Route exact path="/new/user" component={RollUpUser} />
-            <Route exact path="/new/service" component={RollUpService} />
-            <Route exact path="/new/issue" component={CreateEvent} />
-            <Route exact path="/issues" component={EventList} />
-            <Route exact path="/issues/details" component={DetailsEvent} />
-            <Route exact path="/issues/assing" component={DetailsEvent} />
-            <Route component={Error404} />
-          </Switch>
-        </Layout>
-      </BrowserRouter>
-    </React.Fragment>
+    <BrowserRouter>
+      <Layout>
+        <Switch>
+          <Route exact path="/Itil-Support/" component={Index} />
+          <Route exact path="/login/" component={Login} />
+          <Route exact path="/myevents/" component={MyEvents} />
+          <Route exact path="/new/user" component={RollUpUser} />
+          <Route exact path="/new/service" component={RollUpService} />
+          <Route exact path="/new/issue" component={CreateEvent} />
+          <Route exact path="/issues" component={EventList} />
+          <Route exact path="/issues/details" component={DetailsEvent} />
+          <Route exact path="/issues/assing" component={DetailsEvent} />
+          <Route component={Index} />
+        </Switch>
+      </Layout>
+    </BrowserRouter>
   )
 }
 

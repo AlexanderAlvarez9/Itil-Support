@@ -1,6 +1,6 @@
 @import '../containers/App.scss';
 
-.EventList {
+.MyEvents {
   align-items: center;
   background-color: var(--card);
   display: flex;
@@ -13,5 +13,4 @@
   table {
     @include table();
   }
-
 }

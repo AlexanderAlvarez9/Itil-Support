@@ -1,6 +1,6 @@
 .Footer {
   grid-area: Footer;
-  background-color: #5390b3;
+  background-color: var(--principal);
   display: flex;
   justify-content: flex-end;
   padding: 0.3em;
@@ -14,7 +14,7 @@
   }
 
   .socialIcon {
-    color: white;
+    color: var(--white);
     font-size: 1em;
     margin: 0.5em;
   }

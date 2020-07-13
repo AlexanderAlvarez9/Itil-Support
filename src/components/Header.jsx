@@ -8,9 +8,9 @@ class Header extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <div className="header">
-          <div className="header--main">
-            <i className="icon">{'\u2630'}</i>
+        <div className="Header">
+          <div className="Header--main">
+            <span className="icon">{'\u2630'}</span>
           </div>
 
           <div className="Header--user">

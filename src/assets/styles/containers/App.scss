@@ -1,26 +1,31 @@
 /*--- VARS ----*/
 
 :root {
-  --background: #F1F2F2;
+  --background: #D2D6DE;
+  --background-contrast: #222D32;
+  --background-gray: #EFEFEF;
+  --border: 1px solid #e5edef;
   --card: #fff;
-  --principal: #72F1B8;
-  --subprincipal: #D91E62;
+  --principal: #3C8DBC;
+  --principal-contrast: #D91E62;
   --secondary: #FF7A00;
   --alert: #00BB2D;
-  --color-font: #9A9A9A;
+  --alert-contrast: #00BB2D99;
+  --font-color: #9A9A9A;
+  --white: #fff;
   --padding: 1.5em;
   --panel-padding: 0 0.3em 0 0.3em;
   --margin: 2em;
   --gap: 1em;
   --radius: 1em;
-  --background-gray: #EFEFEF;
-  --border: 1px solid #e5edef;
 
   --link: #fff;
   --visited: #fff;
   --hover: #fff;
   --active: #fff;
 }
+
+/*--- END VARS ----*/
 
 a:visited {
   color: var(--visited);
@@ -34,12 +39,9 @@ a:active {
   color: var(--active);
 }
 
-
-/*--- END VARS ----*/
-
 body {
-  background-color: #ECF0F5;
-  color: blue;
+  background-color: var(--background);
+  color: #222D32;
   margin: 0;
 }
 
@@ -58,18 +60,31 @@ body {
 }
 
 @mixin button {
-  background-color: #56C272;
+  background-color: var(--alert);
   border-radius: 0.4em;
   border: none;
-  color: white;
+  color: var(--font-color-contrast);
+  cursor: pointer;
   margin: 1em 0;
   height: 2em;
   width: 15em;
   outline: none;
 }
 
+@mixin hoverButton {
+  background-color: var(--alert-contrast);
+  outline: none;
+}
+
+@mixin activeButton {
+  box-shadow: -1px -1px 1px 0 #000000bb;
+  transform: translate(3px, -3px);
+}
+
 @mixin label {
-  margin-top: 1.5em;
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-top: 1.0em;
   margin-bottom: 0.5em;
 }
 
@@ -91,4 +106,36 @@ body {
   outline: none;
   padding: 0 1em;
   width: 25em;
+}
+
+@mixin table {
+  border-collapse: collapse;
+  margin: auto;
+  width: 100%;
+
+  tr {
+    width: 100%;
+  }
+
+  th,
+  td {
+    box-sizing: border-box;
+    padding: 1em;
+  }
+
+  thead {
+    th {
+      background: #000;
+      color: #fff;
+      text-align: left;
+    }
+  }
+
+  tbody {
+    text-align: left;
+
+    th {
+      background: #eee;
+    }
+  }
 }

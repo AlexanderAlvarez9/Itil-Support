@@ -20,4 +20,12 @@
   button {
     @include button();
   }
+
+  button:hover {
+    @include hoverButton();
+  }
+
+  button:active {
+    @include activeButton();
+  }
 }
