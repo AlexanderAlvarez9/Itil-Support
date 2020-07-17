@@ -19,9 +19,9 @@ Este protecyo tendra como alcance la creacion de un sistema de gestion de casos 
 - Creacion de nuevos eventos o issues, los cuales seran creados por el usuario final que sera el afectado y seran atendidos por los tecnicos luego de que el sistema automaticamente los asigne y asigne su prioridad
 - Dashboard y gestion de cada caso donde cada tecnico podra ver los casos que debe operar y resolver dentro de el tiempo que el sistema asigno
 
-## Creadores
+## Authors
 
-- [Alexander Alvarez](https://github.com/DarkMefisto9)
+- [Alexander Alvarez](https://github.com/AlexanderAlvarez9)
 
 ---
 
@@ -97,16 +97,20 @@ npm test
 - Sass how .scss
 
 ### Backend
-- Node.js for ...
+- Node.js for conections with DB
 - PHP for ...
 
 ## Demo
 
-You can see the demo live, [here](https://mastereatsplatzi.github.io/Master-Eats/)
+You can see the demo live, [here](https://alexanderalvarez9.github.io/Itil-Support/)
 
 ## Image Preview
 
 ![preview.png](preview.png)
+
+## Image Data Base Model
+
+![preview.png](ModeloDB.png)
 
 Image Preview
 
