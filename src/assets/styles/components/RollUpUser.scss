@@ -1,16 +1,23 @@
 @import '../containers/App.scss';
 
 .RollUpUser {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1em;
   background-color: var(--card);
   margin: 3em auto;
   width: 80%;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 2em;
 
   input {
     @include input();
+  }
+
+  .inputBox {
+    display: grid;
   }
 
   label {
@@ -27,5 +34,9 @@
 
   button:active {
     @include activeButton();
+  }
+
+  select {
+    @include select();
   }
 }

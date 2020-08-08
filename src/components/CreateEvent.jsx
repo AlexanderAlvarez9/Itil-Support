@@ -1,58 +1,104 @@
-import React from 'react';
-import '../assets/styles/components/CreateEvent.scss'
+import React, { useState, useEffect } from 'react';
+import '../assets/styles/components/CreateEvent.scss';
+import { db } from '../firebase';
 
-class CreateEvent extends React.Component {
-  constructor() {
-    super()
-    this.category = React.createRef()
-  }
+const CreateEvent = (props) => {
 
-  updateSub() {
-    const subC1 = ["CPU", "Teclado", "Mouse"];
-    const subC2 = ["Office", "Chrome", "Email"];
-    const subC3 = ["Internet", "Telefono", "Servidor", "Wifi"];
-    console.log("Hola");
-  }
+  const subC1 = ["CPU", "Teclado", "Mouse"];
+  const subC2 = ["Office", "Chrome", "Email"];
+  const subC3 = ["Internet", "Telefono", "Servidor", "Wifi"];
 
-  render() {
-    return (
-      <React.Fragment>
-        <div className="CreateEvent">
-          <h2>CREAR NUEVO EVENTO</h2>
+  const initialStateValues = {
+    eventName: '',
+    eventType: '',
+    eventSub: '',
+    eventDesc: '',
+  };
 
-          <label htmlFor="serviceName">Descripcion de la Falla</label>
-          <input name="serviceName" type="text" placeholder="Ingrese Descripcion de la Falla" />
+  const [values, setValues] = useState(initialStateValues)
 
-          <label htmlFor="serviceType">Seleccione Tipo de Afectacion</label>
-          <select onChange={this.updateSub} ref={this.category} className="serviceType" name="serviceType" placeholder="Seleccione tipo de afectacion" >
-            <option disabled value="0">Seleccione</option>
-            <option value="1">Hardware</option>
-            <option value="2">Software</option>
-            <option value="3">Redes - Networking</option>
-          </select>
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setValues({ ...values, [name]: value });
+  };
 
-          <label htmlFor="serviceType">Seleccione Subcategoria</label>
-          <select ref={this.category} className="serviceType" name="serviceType" placeholder="Seleccione subcategoria" >
-            <option value="0"></option>
-          </select>
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    props.addOrEditEvent(values);
+    setValues({ ...initialStateValues });
+  };
 
-          {this.category.value == 2 &&
-            <h1>Hola</h1>
-          }
+  const getEventById = async (id) => {
+    const doc = await db.collection("events").doc(id).get();
+    setValues({ ...doc.data() });
+  };
 
-          {/* <label htmlFor="serviceSla">Afectacion</label>
-          <select name="serviceSla" placeholder="Seleccione SLA del servicio" >
-            <option value="1">Operacion</option>
-            <option value="2">Administracion</option>
-            <option value="3">No Afecta</option>
-          </select> */}
+  useEffect(() => {
+    if (props.currentId === '') {
+      setValues({ ...initialStateValues });
+    } else {
+      getEventById(props.currentId)
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [props.currentId])
 
-          <label htmlFor="serviceDesc">Descripcion</label>
-          <textarea name="serviceDesc" type="text" placeholder="Ingrese Descripcion" />
-          <button>Registrar</button>
+  return (
+    <React.Fragment>
+      <form className="CreateEvent" onSubmit={handleSubmit}>
+        <h2>CREAR NUEVO EVENTO</h2>
+        <div className="inputBox">
+          <label htmlFor="eventName">Nombre del Caso</label>
+          <input
+            name="eventName"
+            type="text"
+            placeholder="Que falla presentas?"
+            value={values.eventName}
+            onChange={handleInputChange}
+          />
         </div>
-      </React.Fragment>
-    )
-  }
+        <div className="inputBox">
+          <label htmlFor="eventType">Seleccione Tipo de Afectacion</label>
+          <select
+            name="eventType"
+            placeholder="Seleccione tipo de afectacion"
+            value={values.eventType}
+            onChange={handleInputChange}
+          >
+            <option value="Hardware">Hardware</option>
+            <option value="Software">Software</option>
+            <option value="Redes">Redes - Networking</option>
+          </select>
+        </div>
+        <div className="inputBox">
+          <label htmlFor="eventSub">Seleccione Subcategoria</label>
+          <select
+            name="eventSub"
+            placeholder="Seleccione subcategoria"
+            value={values.eventSub}
+            onChange={handleInputChange}
+          >
+            <option value="Internet">Internet</option>
+            <option value="Telefono">Telefono</option>
+            <option value="Servidor">Servidor</option>
+            <option value="Wifi">Wifi</option>
+          </select>
+        </div>
+        <div className="inputBox">
+          <label htmlFor="eventDesc">Descripcion</label>
+          <textarea
+            name="eventDesc"
+            type="text"
+            placeholder="Ingrese Descripcion"
+            value={values.eventDesc}
+            onChange={handleInputChange}
+          />
+        </div>
+        <button>
+          {props.currentId === '' ? 'Registrar' : 'Actualizar'}
+        </button>
+      </form>
+    </React.Fragment>
+  )
 }
+
 export default CreateEvent;

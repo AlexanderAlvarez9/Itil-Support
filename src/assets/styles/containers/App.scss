@@ -66,12 +66,14 @@ body {
   background-color: var(--alert);
   border-radius: 0.4em;
   border: none;
-  color: var(--font-color-contrast);
+  color: var(--background-gray);
   cursor: pointer;
   margin: 1em 0;
   height: 2em;
   width: 15em;
   outline: none;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
 @mixin hoverButton {
@@ -96,7 +98,7 @@ body {
   height: 3em;
   outline: none;
   padding: 0 1em;
-  width: 25em;
+  width: 20em;
 }
 
 @mixin border {
@@ -109,6 +111,28 @@ body {
   outline: none;
   padding: 0 1em;
   width: 25em;
+}
+
+@mixin select {
+  width: 20em;
+  height: 2.5em;
+}
+
+@mixin lister {
+  display: grid;
+  // grid-template-columns: 1fr 1fr;
+  grid-gap: 1em;
+  background-color: var(--card);
+  margin: 3em auto;
+  width: 80%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2em;
+
+  table {
+    @include table();
+  }
 }
 
 @mixin table {

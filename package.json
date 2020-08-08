@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/MasterEatsPlatzi/Master-Eats#readme",
   "dependencies": {
+    "@babel/runtime": "^7.11.2",
     "@fortawesome/fontawesome-svg-core": "^1.2.29",
     "@fortawesome/free-brands-svg-icons": "^5.13.1",
     "@fortawesome/free-solid-svg-icons": "^5.13.1",
@@ -31,10 +32,13 @@
     "firebase": "^7.17.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-router-dom": "^5.2.0"
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "^3.4.1",
+    "react-toastify": "^6.0.8"
   },
   "devDependencies": {
     "@babel/core": "^7.10.4",
+    "@babel/plugin-transform-runtime": "^7.11.0",
     "@babel/preset-env": "^7.10.4",
     "@babel/preset-react": "^7.10.4",
     "babel-eslint": "^10.1.0",

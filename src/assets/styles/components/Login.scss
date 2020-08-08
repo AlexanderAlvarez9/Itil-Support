@@ -1,16 +1,23 @@
 @import '../containers/App.scss';
 
 .Login {
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1em;
   background-color: var(--card);
   margin: 3em auto;
   width: 80%;
-  display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+  padding: 2em;
 
   input {
     @include input();
+  }
+
+  .inputBox {
+    display: grid;
   }
 
   label {

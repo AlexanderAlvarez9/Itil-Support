@@ -13,12 +13,12 @@ class Menu extends React.Component {
           </ol>
           <ol className="menu--items">
             <li><Link to="/login">Login</Link></li>
-            <li><Link to="/myevents">Mis Casos</Link></li>
-            <li><Link to="/new/user">Nuevos Usuarios</Link></li>
-            <li><Link to="/new/service">Nuevo Servicio</Link></li>
-            <li><Link to="/new/issue">Crear Evento</Link></li>
+            <li><Link to="/new-user">Usuarios</Link></li>
+            <li><Link to="/new-service">Servicios</Link></li>
+            <li><Link to="/new-issue">Crear Evento</Link></li>
+            {/* <li><Link to="/my-events">Mis Eventos</Link></li> */}
             <li><Link to="/issues">Listado Casos</Link></li>
-            <li><Link to="/issues/details">Detalle Caso</Link></li>
+            <li><Link to="/issues-details">Detalle Caso</Link></li>
           </ol>
           <ol className="menu--close-sesion">
             <span><Link to="/logout">Cerrar Sesion</Link></span>
