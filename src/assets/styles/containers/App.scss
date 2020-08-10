@@ -10,7 +10,7 @@
   --card: #fff;
   --principal: #3C8DBC;
   --principal-contrast: #D91E62;
-  --secondary: #FF7A00;
+  --secondary: #367FA9;
   --alert: #00BB2D;
   --alert-contrast: #00BB2D99;
   --font-color: #9A9A9A;
@@ -27,18 +27,24 @@
   --active: #fff;
 }
 
-/*--- END VARS ----*/
+/* unvisited link */
+a:link {
+  color: var(--link)
+}
 
+/* visited link */
 a:visited {
-  color: var(--visited);
+  color: var(--visited)
 }
 
+/* mouse over link */
 a:hover {
-  color: var(--hover);
+  color: var(--hover)
 }
 
+/* selected link */
 a:active {
-  color: var(--active);
+  color: var(--active)
 }
 
 body {

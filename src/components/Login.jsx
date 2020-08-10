@@ -12,12 +12,15 @@ const Login = () => {
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setValues({ ...values, [name]: value });
-    console.log(name, value);
   };
+
+  const getUsers = async () => {
+    await firebase.auth()
+  }
+  console.log(getUsers());
 
   const handleSingUp = async () => {
     await firebase.auth().createUserWithEmailAndPassword(values.email, values.password)
-    console.log('Creado', values.email, values.password);
   }
 
   const handlelogout = async () => {
@@ -32,8 +35,6 @@ const Login = () => {
       alert(error.message)
     }
   }
-
-  console.log(user);
 
   return (
     <React.Fragment>
@@ -64,14 +65,12 @@ const Login = () => {
               onChange={handleInputChange}
             />
           </div>
-          <button onClick={handleSingUp}>Crear Cuenta</button>
           <button onClick={handleSignIn}>Iniciar Sesion</button>
+          <button onClick={handleSingUp}>Crear Cuenta</button>
         </div>
       }
 
       {user &&
-
-
         <div className="Login">
           <h2>Sesion Activa</h2>
           <p>Usuario: {user.email}</p>

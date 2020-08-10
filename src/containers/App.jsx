@@ -11,6 +11,8 @@ import Users from '../components/Users/Users';
 import Services from '../components/Services/Services';
 import Events from '../components/Events/Events';
 import { useFirebaseApp } from 'reactfire';
+import Technicians from '../components/Technicians/Technicians';
+import AdminEvents from '../components/AdminEvents/AdminEvents';
 
 const App = () => {
   const firebase = useFirebaseApp();
@@ -20,13 +22,14 @@ const App = () => {
     <BrowserRouter>
       <Layout>
         <Switch>
-          <Route exact path="/Itil-Support" component={Index} />
+          <Route exact path="/" component={Index} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/my-events" component={Events} />
-          <Route exact path="/new-user" component={Users} />
+          <Route exact path="/users" component={Users} />
+          <Route exact path="/technicians" component={Technicians} />
           <Route exact path="/new-service" component={Services} />
           <Route exact path="/new-issue" component={Events} />
-          <Route exact path="/issues" component={EventList} />
+          <Route exact path="/events" component={AdminEvents} />
           <Route exact path="/issues-details" component={DetailsEvent} />
           <Route component={Index} />
         </Switch>

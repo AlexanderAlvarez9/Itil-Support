@@ -33,20 +33,53 @@ module.exports = {
             loader: MiniCssExtractPlugin.loader,
           },
           'css-loader',
-          'sass-loader'
-        ]
+          'sass-loader',
+        ],
       },
       {
-        test: /\.(png|gif|jpg|jpeg)$/,
+        test: /\.svg$/,
         use: [
           {
-            'loader': 'file-loader',
+            loader: "babel-loader"
+          },
+          {
+            loader: "react-svg-loader",
             options: {
-              name: 'assets/[hash].[ext]'
+              jsx: true // true outputs JSX tags
             }
           }
         ]
-      }
+      },
+      {
+        test: /\.(png|gif|svg|jpg|jpeg)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: 'assets/[hash].[ext]',
+            },
+          },
+        ],
+      },
+      {
+        test: /\.svg$/,
+        exclude: path.resolve(__dirname, 'node_modules', 'font-awesome'),
+        use: ['babel-loader', 'react-svg-loader'],
+      },
+      {
+        test: /\.svg$/,
+        include: path.resolve(__dirname, 'node_modules', 'font-awesome'),
+        use: [{
+          loader: 'file-loader',
+          options: {
+            jsx: true,
+          },
+        }],
+      },
+      {
+        test: /\.svg$/,
+        loader: 'svg-react-loader',
+      },
     ],
   }, /* Dicta las reglas necesarias para el proyecto */
   devServer: {

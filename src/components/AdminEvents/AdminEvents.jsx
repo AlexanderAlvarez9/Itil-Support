@@ -1,17 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import CreateEvent from '../CreateEvent';
-import './Events.scss'
+import AdminEvent from '../AdminEvent';
+import './AdminEvents.scss'
 import { db } from '../../firebase';
 import { toast } from 'react-toastify';
-import { useUser } from 'reactfire';
 
-const Events = () => {
+const AdminEvents = () => {
 
   const [events, setEvents] = useState([]);
   const [currentId, setCurrentId] = useState('');
-  const user = useUser();
 
   const dateNow = new Date(Date.now())
+  const timestamp = new Date(Date.now())
 
   // console.log(dateNow);
 
@@ -24,6 +23,7 @@ const Events = () => {
           autoClose: 2000
         });
       } else {
+        event = { ...event, update_at: Math.abs(timestamp) }
         await db.collection('events').doc(currentId).update(event)
         toast('Evento Actualizado', {
           type: 'info',
@@ -48,8 +48,7 @@ const Events = () => {
   }
 
   const getEvents = () => {
-    db.collection('events').where('user', '==', user.uid).onSnapshot((querySnapshot) => {
-      console.log(user.uid);
+    db.collection('events').onSnapshot((querySnapshot) => {
       const docs = [];
       querySnapshot.forEach(item => {
         docs.push({ ...item.data(), id: item.id })
@@ -62,25 +61,26 @@ const Events = () => {
     getEvents()
   }, []);
 
-
   return (
     <React.Fragment>
-      <CreateEvent {...{ addOrEditEvent, currentId, events }} />
+      <AdminEvent {...{ addOrEditEvent, currentId, events }} />
 
       <div className="Events">
-        <h2>Mis Casos Creados</h2>
+        <h2>Total Casos</h2>
 
         <table border="1">
           <thead>
             <tr>
               <th>ID</th>
               <th>Caso</th>
-              <th>Categoria</th>
+              <th>Usuario</th>
+              {/* <th>Categoria</th> */}
               <th>SubCategoria</th>
               <th>Descripcion</th>
               <th>Creado</th>
               <th>Estado</th>
               <th>Editar</th>
+              <th>Borrar</th>
             </tr>
           </thead>
           <tbody>
@@ -88,7 +88,8 @@ const Events = () => {
               <tr key={event.id}>
                 <th>{event.id.slice(-4)}</th>
                 <th>{event.eventName}</th>
-                <td>{event.eventType}</td>
+                <td>{event.user.slice(-4)}</td>
+                {/* <td>{event.eventType}</td> */}
                 <td>{event.eventSub}</td>
                 <td>{event.eventDesc}</td>
                 <td>{event.create_at}</td>
@@ -104,16 +105,19 @@ const Events = () => {
                   }
                 </td>
                 {/* <td>{console.log(dateNow, 'hola')}</td> */}
-                < th > <i className="material-icons text-danger" onClick={() => {
+                <th><i className="material-icons text-danger" onClick={() => {
                   setCurrentId(event.id)
                 }}>create</i></th>
+                <th><i className="material-icons text-danger" onClick={() => {
+                  handleDelete(event.id)
+                }}>close</i></th>
               </tr>
             ))}
           </tbody>
         </table>
 
-      </div >
-    </React.Fragment >
+      </div>
+    </React.Fragment>
   )
 }
-export default Events;
+export default AdminEvents;
