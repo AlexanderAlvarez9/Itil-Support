@@ -58,7 +58,7 @@ const CreateEvent = (props) => {
   return (
     <React.Fragment>
       <form className="CreateEvent" onSubmit={handleSubmit}>
-        <h2>ADMINISTRAR EVENTOS</h2>
+        <h2>Administrar Eventos</h2>
 
         <div className="inputBox">
           <label htmlFor="eventName">Nombre del Caso</label>
@@ -176,16 +176,6 @@ const CreateEvent = (props) => {
           <label htmlFor="create_at">Creado</label>
           <p>{values.create_at}</p>
         </div>
-        {/* <div className="inputBox">
-          <label htmlFor="create_at">Creado</label>
-          <textarea
-            name="create_at"
-            type="text"
-            placeholder="Ingrese Descripcion"
-            value={values.create_at}
-            onChange={handleInputChange}
-          />
-        </div> */}
         <div className="inputBox">
           <label htmlFor="update_at">Ultima Modificacion</label>
           <p>{values.update_at}</p>

@@ -41,7 +41,7 @@ const RollUpService = (props) => {
   return (
     <React.Fragment>
       <form className="RollUpService" onSubmit={handleSubmit}>
-        <h2>ENROLAMIENTO DE SERVICIO</h2>
+        <h2>Nuevo Servicio</h2>
         <div className="inputBox">
           <label htmlFor="serviceName">Nombre del Servicio</label>
           <input

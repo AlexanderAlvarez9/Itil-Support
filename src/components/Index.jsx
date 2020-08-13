@@ -1,6 +1,6 @@
 import React from 'react';
 import Containers from '../containers/Containers';
-import Login from './Login';
+import Login from './Login/Login';
 
 const Index = () => {
   return (

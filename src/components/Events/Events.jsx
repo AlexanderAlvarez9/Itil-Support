@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import CreateEvent from '../CreateEvent';
-import './Events.scss'
+import './Events.scss';
 import { db } from '../../firebase';
 import { toast } from 'react-toastify';
 import { useUser } from 'reactfire';
@@ -9,6 +9,7 @@ const Events = () => {
 
   const [events, setEvents] = useState([]);
   const [currentId, setCurrentId] = useState('');
+  const [profile, setProfile] = useState('');
   const user = useUser();
 
   const dateNow = new Date(Date.now())
@@ -49,7 +50,6 @@ const Events = () => {
 
   const getEvents = () => {
     db.collection('events').where('user', '==', user.uid).onSnapshot((querySnapshot) => {
-      console.log(user.uid);
       const docs = [];
       querySnapshot.forEach(item => {
         docs.push({ ...item.data(), id: item.id })

@@ -43,7 +43,7 @@ const RollUpTechnician = (props) => {
   return (
     <React.Fragment>
       <form className="RollUpTechnician" onSubmit={handleSubmit}>
-        <h2>CREAR TECNICO</h2>
+        <h2>Crear Tecnico</h2>
         <div className="inputBox">
           <label htmlFor="name">Nombre</label>
           <input

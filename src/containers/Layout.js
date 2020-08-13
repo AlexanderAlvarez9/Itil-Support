@@ -1,8 +1,8 @@
 import React from 'react';
 import '../assets/styles/containers/Layout.scss';
 import Menu from '../components/Menu';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+import Header from '../components/Header/Header';
+import Footer from '../components/Footer/Footer';
 
 function Layout(props) {
   const { children } = props;

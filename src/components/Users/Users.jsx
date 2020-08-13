@@ -85,7 +85,17 @@ const Users = () => {
                 <td>{user.email}</td>
                 <td>{user.address}</td>
                 <td>{user.sla}</td>
-                <th>{user.profile}</th>
+                <td>
+                  {user.profile == 1 &&
+                    <p>Usuario</p>
+                  }
+                  {user.profile == 2 &&
+                    <p>Tecnico</p>
+                  }
+                  {user.profile == 3 &&
+                    <p>Administrador</p>
+                  }
+                </td>
                 <th><i className="material-icons text-danger" onClick={() => {
                   setCurrentId(user.id)
                 }}>create</i></th>

@@ -1,13 +1,25 @@
 import React, { useState } from 'react';
-import '../assets/styles/components/Login.scss'
+import './Login.scss'
 import 'firebase/auth';
+import { db } from '../../firebase';
 import { useFirebaseApp, useUser } from 'reactfire';
 
 const Login = () => {
 
   const [values, setValues] = useState('')
+  const [profile, setProfile] = useState(0);
   const firebase = useFirebaseApp();
-  const user = useUser();
+  let user = useUser();
+
+  const userValues = {
+    name: '',
+    username: '',
+    phone: '',
+    address: '',
+    profile: 1,
+    password: '',
+    sla: 1,
+  };
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -17,10 +29,13 @@ const Login = () => {
   const getUsers = async () => {
     await firebase.auth()
   }
-  console.log(getUsers());
 
   const handleSingUp = async () => {
-    await firebase.auth().createUserWithEmailAndPassword(values.email, values.password)
+    await firebase.auth().createUserWithEmailAndPassword(values.email, values.password).then(cred => {
+      return db.collection('users').doc(cred.user.uid).set({
+        ...userValues, email: cred.user.email
+      })
+    })
   }
 
   const handlelogout = async () => {
@@ -30,10 +45,23 @@ const Login = () => {
   const handleSignIn = async () => {
     try {
       await firebase.auth().signInWithEmailAndPassword(values.email, values.password)
-
+        .then(async cred => {
+          await db.collection('users').doc(cred.user.uid).get()
+            .then(userP => setProfile(userP.data().profile));
+        })
     } catch (error) {
       alert(error.message)
     }
+  }
+
+  const tests = async () => {
+    // firebase.auth().currentUser.updateProfile({
+    //   displayName: "Jane Q. User",
+    //   photoURL: "https://example.com/jane-q-user/gato.jpg"
+    // })
+
+    console.log(profile);
+
   }
 
   return (
@@ -74,12 +102,11 @@ const Login = () => {
         <div className="Login">
           <h2>Sesion Activa</h2>
           <p>Usuario: {user.email}</p>
+          <p>Perfil: {user.photoURL}</p>
           <button onClick={handlelogout}>Cerrar Sesion</button>
+          <button onClick={tests}>Pruebas</button>
         </div>
       }
-
-
-
     </React.Fragment>
   )
 }

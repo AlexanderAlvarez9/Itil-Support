@@ -44,7 +44,7 @@ const RollUpUser = (props) => {
   return (
     <React.Fragment>
       <form className="RollUpUser" onSubmit={handleSubmit}>
-        <h2>CREAR USUARIO</h2>
+        <h2>Crear Usuario</h2>
         <div className="inputBox">
           <label htmlFor="name">Nombre</label>
           <input

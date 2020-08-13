@@ -3,7 +3,7 @@
 .CreateEvent {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 1em;
+  grid-gap: 0.5em;
   background-color: var(--card);
   margin: 3em auto;
   width: 80%;
@@ -12,12 +12,14 @@
   align-items: center;
   padding: 2em;
 
+
   input {
     @include input();
   }
 
   .inputBox {
     display: grid;
+    margin: 0 auto;
   }
 
   label {

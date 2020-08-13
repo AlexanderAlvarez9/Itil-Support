@@ -7,6 +7,7 @@
   --background-contrast: #222D32;
   --background-gray: #EFEFEF;
   --border: 1px solid #e5edef;
+  --boder-color: #99999999;
   --card: #fff;
   --principal: #3C8DBC;
   --principal-contrast: #D91E62;
@@ -75,9 +76,10 @@ body {
   color: var(--background-gray);
   cursor: pointer;
   margin: 1em 0;
-  height: 2em;
+  // height: 2em;
   width: 15em;
   outline: none;
+  padding: 1em;
   font-weight: bold;
   text-transform: uppercase;
 }
@@ -96,12 +98,15 @@ body {
   font-size: 1.2em;
   font-weight: bold;
   margin-top: 1.0em;
+  margin: 0 auto;
   margin-bottom: 0.5em;
 }
 
 @mixin input {
-  border: 1px solid black;
+  border: 1px solid var(--boder-color);
+  border-radius: 0.5em;
   height: 3em;
+  margin: 0 auto;
   outline: none;
   padding: 0 1em;
   width: 20em;
@@ -113,15 +118,22 @@ body {
 }
 
 @mixin textarea {
-  height: 3em;
+  border: 1px solid var(--boder-color);
+  border-radius: 0.5em;
+  height: 4em;
   outline: none;
-  padding: 0 1em;
-  width: 25em;
+  padding: 0.5em 1em;
+  margin: 0 auto;
+  width: 20em;
 }
 
 @mixin select {
+  border: 1px solid var(--boder-color);
+  border-radius: 0.5em;
+  padding: 0 1em;
   width: 20em;
-  height: 2.5em;
+  margin: 0 auto;
+  height: 3em;
 }
 
 @mixin lister {
