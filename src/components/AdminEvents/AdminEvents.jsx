@@ -3,6 +3,7 @@ import AdminEvent from '../AdminEvent';
 import './AdminEvents.scss'
 import { db } from '../../firebase';
 import { toast } from 'react-toastify';
+import { sub, format } from 'date-fns';
 
 const AdminEvents = () => {
 
@@ -92,7 +93,7 @@ const AdminEvents = () => {
                 {/* <td>{event.eventType}</td> */}
                 <td>{event.eventSub}</td>
                 <td>{event.eventDesc}</td>
-                <td>{event.create_at}</td>
+                <td>{format(event.create_at, 'dd/MMM/yy H:m')}</td>
                 <td>
                   {event.status == 0 &&
                     <p>Pendiente</p>

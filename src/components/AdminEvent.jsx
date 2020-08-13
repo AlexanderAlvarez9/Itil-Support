@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import '../assets/styles/components/CreateEvent.scss';
 import { db } from '../firebase';
 import { useUser } from 'reactfire';
+import { sub, format, toDate, differenceInHours } from 'date-fns'
 
 const CreateEvent = (props) => {
 
@@ -9,9 +10,6 @@ const CreateEvent = (props) => {
 
   const fullDate = new Date();
   const timestamp = new Date(Date.now())
-  const date = fullDate.getDate() + "-" + fullDate.getMonth() + "-" + fullDate.getFullYear() + "-" + fullDate.getHours() + "-" + fullDate.getMinutes()
-  // console.log(date);
-  // console.log(timestamp)
 
   const initialStateValues = {
     user: '',
@@ -59,16 +57,7 @@ const CreateEvent = (props) => {
     <React.Fragment>
       <form className="CreateEvent" onSubmit={handleSubmit}>
         <h2>Administrar Eventos</h2>
-
         <div className="inputBox">
-          <label htmlFor="eventName">Nombre del Caso</label>
-          <input
-            name="eventName"
-            type="text"
-            placeholder="Que falla presentas?"
-            value={values.eventName}
-            onChange={handleInputChange}
-          />
         </div>
         <div className="inputBox">
           <label htmlFor="user">Usuario</label>
@@ -173,12 +162,25 @@ const CreateEvent = (props) => {
           />
         </div>
         <div className="inputBox">
+          <label htmlFor="create_at">Transcurrido</label>
+          <p>
+            {!values.create_at && !timestamp ? <p>Sin fecha</p>
+              : `${differenceInHours(timestamp, toDate(values.create_at))} Horas `
+
+            }
+          </p>
+        </div>
+        <div className="inputBox">
           <label htmlFor="create_at">Creado</label>
-          <p>{values.create_at}</p>
+          <p>
+            {format(values.create_at, 'dd/MMM/yy H:m')}
+          </p>
         </div>
         <div className="inputBox">
           <label htmlFor="update_at">Ultima Modificacion</label>
-          <p>{values.update_at}</p>
+          <p>
+            {!values.update_at ? 0 : format(values.update_at, 'dd/MMM/yy H:m')}
+          </p>
         </div>
         <button>
           {props.currentId === '' ? 'Registrar' : 'Actualizar'}
