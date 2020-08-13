@@ -16,7 +16,7 @@ class Header extends React.Component {
           <div className="Header--user">
             <Link to="/Mensaje" className="item icon"><FontAwesomeIcon title="Mensaje" className="faEnvelope" icon={faEnvelope} /></Link>
             <Link to="/Notificaciones" className="item icon"><FontAwesomeIcon title="Notificaciones" className="faBell" icon={faBell} /></Link>
-            <Link to="/Config" className="item icon"><FontAwesomeIcon title="Config" className="faCog" icon={faCog} /></Link>
+            <Link to="/" className="item icon"><FontAwesomeIcon title="Config" className="faCog" icon={faCog} /></Link>
           </div>
         </div>
       </React.Fragment>

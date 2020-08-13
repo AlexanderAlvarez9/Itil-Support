@@ -55,11 +55,10 @@ const Login = () => {
   }
 
   const tests = async () => {
-    // firebase.auth().currentUser.updateProfile({
-    //   displayName: "Jane Q. User",
-    //   photoURL: "https://example.com/jane-q-user/gato.jpg"
-    // })
-
+    firebase.auth().currentUser.updateProfile({
+      displayName: "Jane Q. User",
+      photoURL: "Administrador"
+    })
     console.log(profile);
 
   }
@@ -101,10 +100,10 @@ const Login = () => {
       {user &&
         <div className="Login">
           <h2>Sesion Activa</h2>
-          <p>Usuario: {user.email}</p>
+          <p>Correo Usuario: <br /> {user.email}</p>
           <p>Perfil: {user.photoURL}</p>
           <button onClick={handlelogout}>Cerrar Sesion</button>
-          <button onClick={tests}>Pruebas</button>
+          {/* <button onClick={tests}>Pruebas</button> */}
         </div>
       }
     </React.Fragment>

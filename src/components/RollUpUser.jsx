@@ -12,6 +12,7 @@ const RollUpUser = (props) => {
     address: '',
     profile: '',
     password: '',
+    status: ''
   };
 
   const [values, setValues] = useState(initialStateValues)

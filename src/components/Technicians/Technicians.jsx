@@ -81,7 +81,14 @@ const Technicians = () => {
                 <th>{technician.id.slice(-4)}</th>
                 <th>{technician.name}</th>
                 <td>{technician.username}</td>
-                <td>{technician.status}</td>
+                <td>
+                  {technician.status == 0 &&
+                    <p>Inactivo</p>
+                  }
+                  {technician.status == 1 &&
+                    <p>Activo</p>
+                  }
+                </td>
                 <td>{technician.profile}</td>
                 <td>{technician.phone}</td>
                 <th><i className="material-icons text-danger" onClick={() => {

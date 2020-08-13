@@ -1,6 +1,6 @@
 import React from 'react';
 import '../assets/styles/containers/Layout.scss';
-import Menu from '../components/Menu';
+import Menu from '../components/Menu/Menu';
 import Header from '../components/Header/Header';
 import Footer from '../components/Footer/Footer';
 

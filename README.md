@@ -1,7 +1,7 @@
 
 # About - Suppourtil
 
-Proyecto Personal Platzi Master - Cohort 3 - Grupo Ana Belisa
+ ersonal Proyect Platzi Master - Cohort 3 - Grupo Ana Belisa
 
 ## Project description
 
@@ -12,12 +12,15 @@ Web app proyect for suppourt app based on WEB
 This application want to help to business to create operate and resolve problems and issues in our organization
 
 Este protecyo tendra como alcance la creacion de un sistema de gestion de casos para soporte tecnico
+The scope of this proyect is create a management system that recive cases and issues related to problems of your employees
 
-- Login para usuarios tanto administrador como usuario final
-- Creacion y enrrolamiento de nuevos usuarios para el uso del aplicativo
-- Creacion de servicios, los cuales tendran un area asignada, la cual a su vez tendra una prioridad de atencion (SLA)
-- Creacion de nuevos eventos o issues, los cuales seran creados por el usuario final que sera el afectado y seran atendidos por los tecnicos luego de que el sistema automaticamente los asigne y asigne su prioridad
-- Dashboard y gestion de cada caso donde cada tecnico podra ver los casos que debe operar y resolver dentro de el tiempo que el sistema asigno
+- Register new users
+- Create login for admin user and user standar
+- Show the options below type of profile, user, technician or admin
+- Allows modify the profile type as is need
+- Creation of new events o issues, this will be created by users and by managed for a admin user, who assign this a technician
+- The user will be informated of status of his event in his profile
+- Technician can modify and add report of status, finally can be the status and mark it as finished
 
 ## Authors
 
@@ -53,9 +56,9 @@ Este protecyo tendra como alcance la creacion de un sistema de gestion de casos 
 
 ### Viernes 24 Julio
 
-- Entrega y Despliegue del Proyecto
+- Entrega muestra y Despliegue del Proyecto
 
-### Viernes 31 Julio
+### Viernes 14 Agosto
 
 - Entrega FInal
 
@@ -77,10 +80,6 @@ npm install
 npm run start
 ```
 
-## Test
-```jsx
-npm test
-```
 
 ## Definiciones para el desarrollor
 
@@ -95,10 +94,16 @@ npm test
 ### Frontend
 - React based in components
 - Sass how .scss
+- Fontawesome
+- Babel
+- Eslint
+- Webpack
+- Prettier
 
 ### Backend
-- Node.js for conections with DB
-- PHP for ...
+- Firebase as BaaS
+* Firebase Authentication
+* Firestore as data base
 
 ## Demo
 
@@ -108,7 +113,7 @@ You can see the demo live, [here](https://alexanderalvarez9.github.io/Itil-Suppo
 
 ![preview.png](preview.png)
 
-## Image Data Base Model
+## Image Data Base Model in relational mode
 
 ![preview.png](ModeloDB.png)
 
