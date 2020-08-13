@@ -9,12 +9,7 @@ const Events = () => {
 
   const [events, setEvents] = useState([]);
   const [currentId, setCurrentId] = useState('');
-  const [profile, setProfile] = useState('');
   const user = useUser();
-
-  const dateNow = new Date(Date.now())
-
-  // console.log(dateNow);
 
   const addOrEditEvent = async (event) => {
     try {

@@ -47,6 +47,8 @@ const RollUpUser = (props) => {
       <form className="RollUpUser" onSubmit={handleSubmit}>
         <h2>Crear Usuario</h2>
         <div className="inputBox">
+        </div>
+        <div className="inputBox">
           <label htmlFor="name">Nombre</label>
           <input
             name="name"

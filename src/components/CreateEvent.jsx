@@ -59,6 +59,8 @@ const CreateEvent = (props) => {
       <form className="CreateEvent" onSubmit={handleSubmit}>
         <h2>CREAR NUEVO EVENTO</h2>
         <div className="inputBox">
+        </div>
+        <div className="inputBox">
           <label htmlFor="eventName">Nombre del Caso</label>
           <input
             name="eventName"
@@ -94,6 +96,7 @@ const CreateEvent = (props) => {
             <option value="Telefono">Telefono</option>
             <option value="Servidor">Servidor</option>
             <option value="Wifi">Wifi</option>
+            <option value="PC">PC</option>
             <option defaultValue value="Otro">Otro</option>
           </select>
         </div>

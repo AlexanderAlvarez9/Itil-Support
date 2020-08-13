@@ -73,8 +73,8 @@ const AdminEvents = () => {
           <thead>
             <tr>
               <th>ID</th>
-              <th>Caso</th>
               <th>Usuario</th>
+              <th>Caso</th>
               {/* <th>Categoria</th> */}
               <th>SubCategoria</th>
               <th>Descripcion</th>
@@ -88,8 +88,8 @@ const AdminEvents = () => {
             {events.map(event => (
               <tr key={event.id}>
                 <th>{event.id.slice(-4)}</th>
-                <th>{event.eventName}</th>
                 <td>{event.user.slice(-4)}</td>
+                <th>{event.eventName}</th>
                 {/* <td>{event.eventType}</td> */}
                 <td>{event.eventSub}</td>
                 <td>{event.eventDesc}</td>

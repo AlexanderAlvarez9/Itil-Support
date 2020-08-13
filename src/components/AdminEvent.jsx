@@ -60,6 +60,16 @@ const CreateEvent = (props) => {
         <div className="inputBox">
         </div>
         <div className="inputBox">
+          <label htmlFor="eventName">Nombre del Caso</label>
+          <input
+            name="eventName"
+            type="text"
+            placeholder="Que falla presentas?"
+            value={values.eventName}
+            onChange={handleInputChange}
+          />
+        </div>
+        <div className="inputBox">
           <label htmlFor="user">Usuario</label>
           <input
             name="user"
