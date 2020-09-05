@@ -57,6 +57,7 @@ const Technicians = () => {
 
   return (
     <React.Fragment>
+      <ToastContainer />
       <RollUpTechnician {...{ addOrEditTechnician, currentId, technicians }} />
 
       <div className="Technicians">

@@ -57,6 +57,7 @@ const Users = () => {
 
   return (
     <React.Fragment>
+      <ToastContainer />
       <RollUpUser {...{ addOrEditUser, currentId, users }} />
 
       <div className="Users">

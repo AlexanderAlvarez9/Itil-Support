@@ -11,13 +11,17 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx'],
   }, /*resuelve las extensiones que usarán en el proyecto*/
+  node: {
+    fs: "empty"
+  },
   module: {
     rules: [
       { /* Regla principal */
         test: /\.(js|jsx)$/, /* Identificación de los archivos js y jsx */
         exclude: /node_modules/, /* Excluye la carpeta node_modules */
         use: {
-          loader: "babel-loader"/* Hay que usar el loader para que babel haga el trabajo */
+          loader:
+            "babel-loader"/* Hay que usar el loader para que babel haga el trabajo */
         },
       },
       { /* Nueva regla */

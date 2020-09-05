@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import AdminEvent from '../AdminEvent';
-import './AdminEvents.scss'
+import './AdminEvents.scss';
 import { db } from '../../firebase';
 import { toast } from 'react-toastify';
 import { sub, format } from 'date-fns';
@@ -10,66 +10,66 @@ const AdminEvents = () => {
   const [events, setEvents] = useState([]);
   const [currentId, setCurrentId] = useState('');
 
-  const dateNow = new Date(Date.now())
-  const timestamp = new Date(Date.now())
+  const dateNow = new Date(Date.now());
+  const timestamp = new Date(Date.now());
 
   // console.log(dateNow);
 
   const addOrEditEvent = async (event) => {
     try {
       if (currentId === '') {
-        await db.collection('events').doc().set(event)
+        await db.collection('events').doc().set(event);
         toast('Nuevo Evento Agregado', {
           type: 'success',
-          autoClose: 2000
+          autoClose: 2000,
         });
       } else {
-        event = { ...event, update_at: Math.abs(timestamp) }
-        await db.collection('events').doc(currentId).update(event)
+        event = { ...event, update_at: Math.abs(timestamp) };
+        await db.collection('events').doc(currentId).update(event);
         toast('Evento Actualizado', {
           type: 'info',
-          autoClose: 2000
+          autoClose: 2000,
         });
       }
-      setCurrentId('')
+      setCurrentId('');
     } catch (error) {
       console.error(error);
     }
     console.log(event);
-  }
+  };
 
   const handleDelete = async (id) => {
     if (window.confirm('Esta seguro?')) {
       toast('Evento Borrado', {
         type: 'error',
-        autoClose: 2000
+        autoClose: 2000,
       });
       await db.collection('events').doc(id).delete();
     }
-  }
+  };
 
   const getEvents = () => {
     db.collection('events').onSnapshot((querySnapshot) => {
       const docs = [];
-      querySnapshot.forEach(item => {
-        docs.push({ ...item.data(), id: item.id })
-      })
+      querySnapshot.forEach((item) => {
+        docs.push({ ...item.data(), id: item.id });
+      });
       setEvents(docs);
     });
-  }
+  };
 
   useEffect(() => {
-    getEvents()
+    getEvents();
   }, []);
 
   return (
-    <React.Fragment>
+    <>
       <AdminEvent {...{ addOrEditEvent, currentId, events }} />
 
-      <div className="Events">
+      <div className='Events'>
         <h2>Total Casos</h2>
 
-        <table border="1">
+        <table border='1'>
           <thead>
             <tr>
               <th>ID</th>
@@ -85,7 +85,7 @@ const AdminEvents = () => {
             </tr>
           </thead>
           <tbody>
-            {events.map(event => (
+            {events.map((event) => (
               <tr key={event.id}>
                 <th>{event.id.slice(-4)}</th>
                 <td>{event.user.slice(-4)}</td>
@@ -96,29 +96,40 @@ const AdminEvents = () => {
                 <td>{format(event.create_at, 'dd/MMM/yy H:m')}</td>
                 <td>
                   {event.status == 0 &&
-                    <p>Pendiente</p>
-                  }
+                    <p>Pendiente</p>}
                   {event.status == 1 &&
-                    <p>En Curso</p>
-                  }
+                    <p>En Curso</p>}
                   {event.status == 2 &&
-                    <p>Finalizado</p>
-                  }
+                    <p>Finalizado</p>}
                 </td>
                 {/* <td>{console.log(dateNow, 'hola')}</td> */}
-                <th><i className="material-icons text-danger" onClick={() => {
-                  setCurrentId(event.id)
-                }}>create</i></th>
-                <th><i className="material-icons text-danger" onClick={() => {
-                  handleDelete(event.id)
-                }}>close</i></th>
+                <th>
+                  <i
+                    className='material-icons text-danger'
+                    onClick={() => {
+                      setCurrentId(event.id);
+                    }}
+                  >
+                    create
+                  </i>
+                </th>
+                <th>
+                  <i
+                    className='material-icons text-danger'
+                    onClick={() => {
+                      handleDelete(event.id);
+                    }}
+                  >
+                    close
+                  </i>
+                </th>
               </tr>
             ))}
           </tbody>
         </table>
 
       </div>
-    </React.Fragment>
-  )
-}
+    </>
+  );
+};
 export default AdminEvents;

@@ -4,7 +4,12 @@ import 'firebase/auth';
 import { db } from '../../firebase';
 import { useFirebaseApp, useUser } from 'reactfire';
 
+
+
+require('dotenv').config();
+
 const Login = () => {
+
 
   const [values, setValues] = useState('')
   const [profile, setProfile] = useState(0);
@@ -78,7 +83,6 @@ const Login = () => {
               name="email"
               type="text"
               placeholder="Ingrese su correo"
-              onChange=""
               onChange={handleInputChange}
             />
           </div>
