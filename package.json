@@ -9,8 +9,7 @@
     "starts": "env-cmd start react-scripts start",
     "dev": "env-cmd dev webpack-dev-server --open --mode development",
     "eslint": "eslint src/ --fix",
-    "format": "prettier --write '{*.js,src/**/*.{js,jsx}}'",
-    "test": "jest"
+    "format": "prettier --write '{*.js,src/**/*.{js,jsx}}'"
   },
   "repository": {
     "type": "git",
