@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import RollUpUser from '../RollUpUser';
 import './Users.scss'
 import { db } from '../../firebase';
-import { toast } from 'react-toastify';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Users = () => {
 
