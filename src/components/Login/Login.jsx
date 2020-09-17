@@ -3,8 +3,8 @@ import './Login.scss'
 import 'firebase/auth';
 import { db } from '../../firebase';
 import { useFirebaseApp, useUser } from 'reactfire';
-
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 require('dotenv').config();
 
