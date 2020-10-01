@@ -1,7 +1,7 @@
 
 # About - Suppourtil
 
- ersonal Proyect Platzi Master - Cohort 3 - Grupo Ana Belisa
+ Personal Proyect Platzi Master - Cohort 3 - Grupo Ana Belisa
 
 ## Project description
 
@@ -11,7 +11,6 @@ Web app proyect for suppourt app based on WEB
 
 This application want to help to business to create operate and resolve problems and issues in our organization
 
-Este protecyo tendra como alcance la creacion de un sistema de gestion de casos para soporte tecnico
 The scope of this proyect is create a management system that recive cases and issues related to problems of your employees
 
 - Register new users
